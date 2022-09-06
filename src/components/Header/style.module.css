@@ -1,0 +1,187 @@
+.header {
+  background: var(--bg-dark);
+  height: 150px;
+  display: flex;
+}
+
+.container {
+  width: 1440px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logoContainer {
+  display: flex;
+  align-items: baseline;
+}
+
+.title {
+  font-family: "Forum";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 31px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.title:hover {
+  opacity: 0.7;
+  transition: 0.5s;
+}
+
+.list {
+  display: flex;
+}
+
+.item {
+  list-style: none;
+  margin-right: 56px;
+}
+
+.item:last-of-type {
+  margin-right: 0;
+}
+
+.link {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 100;
+  font-size: 22px;
+  line-height: 26px;
+  letter-spacing: 2px;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.link:hover {
+  transition: 0.5s;
+  opacity: 0.7;
+}
+
+.burgerBtn {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 32px;
+  height: 30px;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+  display: none;
+}
+
+.burgerBtn:hover,
+.burger:hover {
+  opacity: 0.7;
+}
+
+.burger {
+  width: 32px;
+  height: 2px;
+  background: white;
+  border-radius: 5px;
+  top: 10px;
+  transition: all 0.5s ease-in-out;
+}
+
+.burger::before,
+.burger::after {
+  content: "";
+  position: absolute;
+  width: 32px;
+  height: 2px;
+  background: white;
+  border-radius: 5px;
+  transition: all 0.5s ease-in-out;
+}
+
+.burger::before {
+  transform: translateY(-8px);
+}
+
+.burger::after {
+  transform: translateY(8px);
+}
+
+/* animation start */
+
+.burgerBtn.open .burger {
+  transform: translateX(-50px);
+  background: transparent;
+  box-shadow: none;
+}
+
+.burgerBtn.open .burger::before {
+  transform: rotate(45deg) translate(35px, -35px);
+}
+
+.burgerBtn.open .burger::after {
+  transform: rotate(-45deg) translate(35px, 35px);
+}
+
+.menu {
+  display: none;
+}
+
+/* animation end */
+
+@media (max-width: 1025px) {
+  .header {
+    height: 130px;
+  }
+
+  .container {
+    width: 984px;
+  }
+
+  .burgerBtn {
+    display: inherit;
+  }
+}
+
+@media (max-width: 1025px) {
+  .nav > .list > li {
+    display: none;
+  }
+}
+
+@media (max-width: 769px) {
+  .header {
+    height: 110px;
+  }
+  .container {
+    max-width: 728px;
+  }
+
+  .logoContainer {
+    padding-top: 10px;
+  }
+
+  .title {
+    line-height: 50px;
+  }
+}
+
+@media (max-width: 421px) {
+  .header {
+    height: 90px;
+  }
+
+  .container {
+    max-width: 380px;
+  }
+
+  .logoContainer {
+    padding-bottom: 20px;
+  }
+
+  .title {
+    font-size: 16px;
+    line-height: 18px;
+  }
+}
